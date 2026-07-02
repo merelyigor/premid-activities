@@ -24,10 +24,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 22
 
@@ -40,16 +40,16 @@ jobs:
       - name: Write release notes
         shell: bash
         run: |
-          cat > release-notes.md <<'EOF'
-          ## PreMiD Activities
-
-          Ready-to-install PreMiD activity ZIP files:
-
-          - AniTube.zip for anitube.in.ua
-          - UAKino.zip for uakino.best
-
-          Author: Merelyigor
-          EOF
+          printf '%s\n' \
+            '## PreMiD Activities' \
+            '' \
+            'Ready-to-install PreMiD activity ZIP files:' \
+            '' \
+            '- AniTube.zip for anitube.in.ua' \
+            '- UAKino.zip for uakino.best' \
+            '' \
+            'Author: Merelyigor' \
+            > release-notes.md
 
       - name: Create or update GitHub Release
         shell: bash
