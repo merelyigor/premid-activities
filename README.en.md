@@ -6,6 +6,14 @@ Author: **Merelyigor**
 
 **English** | [Українська](README.uk.md)
 
+## ✨ Preview
+
+![AniTube Discord Rich Presence](docs/images/anitube-discord-profile.png)
+
+<p align="center">
+  <img src="docs/images/uakino-rich-presence.png" alt="UAKino Rich Presence preview" width="520">
+</p>
+
 This repository contains local [PreMiD](https://premid.app/) activities for Ukrainian video websites:
 
 - **AniTube** (`anitube.in.ua`)
@@ -13,9 +21,9 @@ This repository contains local [PreMiD](https://premid.app/) activities for Ukra
 
 The activities show Discord Rich Presence data for what you are watching: title, poster, playback state, play/pause, and watch progress when PreMiD can read the player.
 
-## Features
+## 🚀 Features
 
-### AniTube
+### 🎬 AniTube
 
 - shows the anime title;
 - shows the active episode or episode count when the active episode is not visible yet;
@@ -23,7 +31,7 @@ The activities show Discord Rich Presence data for what you are watching: title,
 - shows play/pause;
 - shows watch progress when a `<video>` element or iframe player is available.
 
-### UAKino
+### 🍿 UAKino
 
 - shows the movie title;
 - shows year, quality, and genres;
@@ -34,7 +42,23 @@ The activities show Discord Rich Presence data for what you are watching: title,
 
 For UAKino, images are still taken from the website, but they are passed to Discord through DuckDuckGo image proxy. This is needed because Discord cannot always load images directly from `uakino.best`.
 
-## Repository Structure
+## 📸 Screenshots
+
+### Real activity previews
+
+| AniTube | UAKino |
+| --- | --- |
+| ![AniTube profile activity](docs/images/anitube-discord-profile.png) | ![UAKino movie activity](docs/images/uakino-rich-presence.png) |
+
+### Discord Rich Presence references
+
+These examples show the kind of polished Discord Rich Presence layout this project aims to match.
+
+| Disney+ style | YouTube Music style | YouTube style |
+| --- | --- | --- |
+| ![Disney+ Rich Presence reference](docs/images/discord-example-disney.png) | ![YouTube Music Rich Presence reference](docs/images/discord-example-youtube-music.png) | ![YouTube Rich Presence reference](docs/images/discord-example-youtube.png) |
+
+## 📁 Repository Structure
 
 ```text
 .
@@ -58,7 +82,7 @@ For UAKino, images are still taken from the website, but they are passed to Disc
 └── README.md
 ```
 
-## Quick Install
+## ⚡ Quick Install
 
 1. Install **Discord Desktop**.
 2. Install the **PreMiD desktop app**.
@@ -94,7 +118,7 @@ dist/AniTube.zip
 dist/UAKino.zip
 ```
 
-## Build ZIPs Yourself
+## 🛠️ Build ZIPs Yourself
 
 You need:
 
@@ -132,7 +156,7 @@ Build only one activity:
 .\scripts\build.ps1 -Activities UAKino
 ```
 
-## Discord Application ID
+## 🔑 Discord Application ID
 
 A PreMiD Activity needs a Discord Application `clientId`.
 
@@ -185,7 +209,7 @@ const presence = new Presence({
 .\scripts\build.ps1
 ```
 
-## Image Notes
+## 🖼️ Image Notes
 
 AniTube usually serves posters directly as JPEG, so Discord can display them without extra handling.
 
@@ -197,14 +221,15 @@ UAKino often serves posters as WebP or blocks direct image loading for Discord. 
 
 This is not a local image and not a Discord asset. The source is still the UAKino page.
 
-## Known Limitations
+## ⚠️ Known Limitations
 
 - Watch progress depends on whether PreMiD can see a `<video>` element on the page or inside an iframe.
 - If a website changes its HTML structure, selectors in `presence.ts` may need updates.
 - PreMiD Developer Mode may require a built ZIP instead of raw `metadata.json` and `presence.ts` files.
 
-## License
+## 📄 License
 
 MIT License. See [LICENSE](LICENSE).
+
 
 
