@@ -157,6 +157,25 @@ chmod +x ./scripts/build.sh
 - збере built ZIP-и;
 - покладе результат у `dist/`.
 
+## 🤖 Збірка через GitHub Actions
+
+ZIP-файли можна збирати прямо на GitHub:
+
+1. Відкрийте репозиторій на GitHub.
+2. Перейдіть у **Actions**.
+3. Оберіть **Build PreMiD Activities**.
+4. Натисніть **Run workflow**.
+5. Оберіть `all`, `AniTube` або `UAKino`.
+6. Після завершення workflow завантажте artifact `premid-activity-zips`.
+
+Щоб опублікувати GitHub Release із ZIP-файлами:
+
+1. Перейдіть у **Actions**.
+2. Оберіть **Release PreMiD Activities**.
+3. Натисніть **Run workflow**.
+4. Введіть tag, наприклад `v1.0.0`.
+5. Workflow збере обидва activity та створить або оновить GitHub Release з `AniTube.zip` і `UAKino.zip`.
+
 Зібрати тільки один activity на Windows:
 
 ```powershell

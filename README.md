@@ -157,6 +157,25 @@ The script will:
 - build the ZIP files;
 - place the result in `dist/`.
 
+## 🤖 Build on GitHub Actions
+
+You can build the ZIP files directly on GitHub:
+
+1. Open the repository on GitHub.
+2. Go to **Actions**.
+3. Select **Build PreMiD Activities**.
+4. Click **Run workflow**.
+5. Choose `all`, `AniTube`, or `UAKino`.
+6. Download the `premid-activity-zips` artifact after the workflow finishes.
+
+To publish a GitHub Release with ZIP assets:
+
+1. Go to **Actions**.
+2. Select **Release PreMiD Activities**.
+3. Click **Run workflow**.
+4. Enter a tag such as `v1.0.0`.
+5. The workflow builds both activities and creates or updates the GitHub Release with `AniTube.zip` and `UAKino.zip`.
+
 Build only one activity on Windows:
 
 ```powershell

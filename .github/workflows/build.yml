@@ -1,0 +1,67 @@
+name: Build PreMiD Activities
+
+on:
+  workflow_dispatch:
+    inputs:
+      activity:
+        description: Activity to build
+        required: true
+        default: all
+        type: choice
+        options:
+          - all
+          - AniTube
+          - UAKino
+  push:
+    branches:
+      - main
+    paths:
+      - activities/**
+      - scripts/**
+      - .github/workflows/build.yml
+  pull_request:
+    paths:
+      - activities/**
+      - scripts/**
+      - .github/workflows/build.yml
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build activities
+        shell: bash
+        run: |
+          chmod +x ./scripts/build.sh
+
+          case "${{ github.event.inputs.activity || 'all' }}" in
+            all)
+              ./scripts/build.sh
+              ;;
+            AniTube)
+              ./scripts/build.sh AniTube
+              ;;
+            UAKino)
+              ./scripts/build.sh UAKino
+              ;;
+            *)
+              echo "Unknown activity: ${{ github.event.inputs.activity }}"
+              exit 1
+              ;;
+          esac
+
+      - name: Upload built ZIP files
+        uses: actions/upload-artifact@v4
+        with:
+          name: premid-activity-zips
+          path: dist/*.zip
+          if-no-files-found: error
