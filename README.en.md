@@ -8,7 +8,7 @@ Author: **Merelyigor**
 
 ## ✨ Preview
 
-![AniTube Discord Rich Presence](docs/images/anitube-discord-profile.png)
+![AniTube Discord Rich Presence](docs/images/anitube-profile-rich-presence.png)
 
 <p align="center">
   <img src="docs/images/uakino-rich-presence.png" alt="UAKino Rich Presence preview" width="520">
@@ -48,7 +48,7 @@ For UAKino, images are still taken from the website, but they are passed to Disc
 
 | AniTube | UAKino |
 | --- | --- |
-| ![AniTube profile activity](docs/images/anitube-discord-profile.png) | ![UAKino movie activity](docs/images/uakino-rich-presence.png) |
+| ![AniTube profile activity](docs/images/anitube-profile-rich-presence.png) | ![UAKino movie activity](docs/images/uakino-rich-presence.png) |
 
 ### Discord Rich Presence references
 

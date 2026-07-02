@@ -8,7 +8,7 @@
 
 ## ✨ Прев’ю
 
-![AniTube Discord Rich Presence](docs/images/anitube-discord-profile.png)
+![AniTube Discord Rich Presence](docs/images/anitube-profile-rich-presence.png)
 
 <p align="center">
   <img src="docs/images/uakino-rich-presence.png" alt="Прев’ю UAKino Rich Presence" width="520">
@@ -48,7 +48,7 @@ Activity показують у Discord Rich Presence, що саме ви див�
 
 | AniTube | UAKino |
 | --- | --- |
-| ![Активність AniTube у профілі Discord](docs/images/anitube-discord-profile.png) | ![Активність UAKino у Discord](docs/images/uakino-rich-presence.png) |
+| ![Активність AniTube у профілі Discord](docs/images/anitube-profile-rich-presence.png) | ![Активність UAKino у Discord](docs/images/uakino-rich-presence.png) |
 
 ### Референси Discord Rich Presence
 
