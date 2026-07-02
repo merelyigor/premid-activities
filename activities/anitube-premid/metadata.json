@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.premid.app/metadata/1.16",
+  "apiVersion": 1,
+  "author": {
+    "name": "merelyigor",
+    "id": "YOUR_DISCORD_USER_ID"
+  },
+  "service": "AniTube",
+  "description": {
+    "en": "Shows what you are watching on anitube.in.ua",
+    "uk": "Показує, що ти дивишся на anitube.in.ua"
+  },
+  "url": "anitube.in.ua",
+  "regExp": "^https?://(www[.])?anitube[.]in[.]ua/",
+  "iframe": true,
+  "iFrameRegExp": ".*",
+  "version": "1.0.0",
+  "logo": "https://anitube.in.ua/favicon.ico",
+  "thumbnail": "https://anitube.in.ua/favicon.ico",
+  "color": "#f97316",
+  "category": "anime",
+  "tags": [
+    "anime",
+    "anitube",
+    "video"
+  ]
+}

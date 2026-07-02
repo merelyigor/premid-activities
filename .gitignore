@@ -1,0 +1,30 @@
+# Build dependencies and temporary upstream clone
+node_modules/
+PreMiD-Activities/
+.pnpm-store/
+
+# Local app registry and machine-specific paths
+premid-apps.local.json
+premid-apps.json
+
+# Temporary/debug files
+*.html
+*.log
+*.tmp
+*.bak
+
+# Local poster experiments/assets
+*.jpg
+*.jpeg
+*.png
+*.webp
+!docs/**/*.png
+!docs/**/*.jpg
+!docs/**/*.jpeg
+!docs/**/*.webp
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

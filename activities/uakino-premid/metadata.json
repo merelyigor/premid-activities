@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.premid.app/metadata/1.16",
+  "apiVersion": 1,
+  "author": {
+    "name": "merelyigor",
+    "id": "YOUR_DISCORD_USER_ID"
+  },
+  "service": "UAKino",
+  "description": {
+    "en": "Shows what you are watching on uakino.best",
+    "uk": "Показує, що ти дивишся на uakino.best"
+  },
+  "url": "uakino.best",
+  "regExp": "^https?://(www[.])?uakino[.]best/",
+  "iframe": true,
+  "iFrameRegExp": ".*",
+  "version": "1.0.0",
+  "logo": "https://uakino.best/favicon.ico",
+  "thumbnail": "https://uakino.best/uploads/posts/2026-06/ogshpngr.webp",
+  "color": "#0f62fe",
+  "category": "videos",
+  "tags": [
+    "movies",
+    "uakino",
+    "video"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "anitube": {
+    "service": "AniTube",
+    "clientId": "YOUR_ANITUBE_DISCORD_APPLICATION_ID",
+    "publicKey": "YOUR_ANITUBE_PUBLIC_KEY",
+    "activityFolder": "activities/anitube-premid",
+    "builtZip": "dist/AniTube.zip",
+    "assetKeys": []
+  },
+  "uakino": {
+    "service": "UAKino",
+    "clientId": "YOUR_UAKINO_DISCORD_APPLICATION_ID",
+    "publicKey": "YOUR_UAKINO_PUBLIC_KEY",
+    "activityFolder": "activities/uakino-premid",
+    "builtZip": "dist/UAKino.zip",
+    "assetKeys": []
+  }
+}
