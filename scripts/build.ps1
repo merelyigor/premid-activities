@@ -11,6 +11,26 @@ $dist = Join-Path $root 'dist'
 
 New-Item -ItemType Directory -Path $dist -Force | Out-Null
 
+function Get-PackageRunner {
+  if (Get-Command npm -ErrorAction SilentlyContinue) {
+    return @{
+      InstallRoot = @('npm', @('install', '--ignore-scripts'))
+      InstallCli = @('npm', @('install', '--prefix', (Join-Path $upstream 'cli')))
+      Tsc = @('node', @((Join-Path $upstream 'node_modules\typescript\bin\tsc'), '-p', (Join-Path $upstream 'cli')))
+    }
+  }
+
+  if (Get-Command pnpm -ErrorAction SilentlyContinue) {
+    return @{
+      InstallRoot = @('pnpm', @('install', '--ignore-scripts', '--config.block-exotic-subdeps=false'))
+      InstallCli = @('pnpm', @('install', '--ignore-scripts', '--config.block-exotic-subdeps=false'))
+      Tsc = @('node', @((Join-Path $upstream 'cli\node_modules\typescript\bin\tsc'), '-p', (Join-Path $upstream 'cli')))
+    }
+  }
+
+  throw 'Neither npm nor pnpm was found in PATH. Install Node.js/npm or pnpm and try again.'
+}
+
 function Invoke-Logged {
   param(
     [string] $Command,
@@ -35,9 +55,10 @@ if (-not (Test-Path $upstream)) {
   Invoke-Logged git @('clone', '--depth', '1', $PreMiDRepo, $upstream)
 }
 
-Invoke-Logged npm @('install', '--ignore-scripts') $upstream
-Invoke-Logged npm @('install', '--prefix', (Join-Path $upstream 'cli')) $upstream
-Invoke-Logged npx @('tsc', '-p', (Join-Path $upstream 'cli')) $upstream
+$runner = Get-PackageRunner
+Invoke-Logged $runner.InstallRoot[0] $runner.InstallRoot[1] $upstream
+Invoke-Logged $runner.InstallCli[0] $runner.InstallCli[1] (Join-Path $upstream 'cli')
+Invoke-Logged $runner.Tsc[0] $runner.Tsc[1] $upstream
 
 $activityMap = @{
   AniTube = @{

@@ -1,4 +1,4 @@
-﻿# PreMiD Activities for AniTube and UAKino
+# PreMiD Activities for AniTube and UAKino
 
 Author: **Merelyigor**
 
@@ -75,7 +75,8 @@ These examples show the kind of polished Discord Rich Presence layout this proje
 │   ├── AniTube.zip
 │   └── UAKino.zip
 ├── scripts/
-│   └── build.ps1
+│   ├── build.ps1
+│   └── build.sh
 ├── premid-apps.example.json
 ├── .gitignore
 ├── LICENSE
@@ -124,8 +125,8 @@ You need:
 
 - Git
 - Node.js
-- npm
-- PowerShell
+- npm or pnpm
+- PowerShell on Windows, or Bash on Linux/macOS
 
 Clone the repository:
 
@@ -134,10 +135,17 @@ git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
 cd YOUR_REPO
 ```
 
-Run the build script:
+Run the build script on Windows:
 
 ```powershell
 .\scripts\build.ps1
+```
+
+Run the build script on Linux/macOS:
+
+```bash
+chmod +x ./scripts/build.sh
+./scripts/build.sh
 ```
 
 The script will:
@@ -149,11 +157,18 @@ The script will:
 - build the ZIP files;
 - place the result in `dist/`.
 
-Build only one activity:
+Build only one activity on Windows:
 
 ```powershell
 .\scripts\build.ps1 -Activities AniTube
 .\scripts\build.ps1 -Activities UAKino
+```
+
+Build only one activity on Linux/macOS:
+
+```bash
+./scripts/build.sh AniTube
+./scripts/build.sh UAKino
 ```
 
 ## 🔑 Discord Application ID
@@ -207,6 +222,12 @@ const presence = new Presence({
 
 ```powershell
 .\scripts\build.ps1
+```
+
+Or on Linux/macOS:
+
+```bash
+./scripts/build.sh
 ```
 
 ## 🖼️ Image Notes

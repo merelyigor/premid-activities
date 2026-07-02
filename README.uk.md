@@ -1,4 +1,4 @@
-﻿# PreMiD Activity для AniTube та UAKino
+# PreMiD Activity для AniTube та UAKino
 
 Автор: **Merelyigor**
 
@@ -75,7 +75,8 @@ Activity показують у Discord Rich Presence, що саме ви див�
 │   ├── AniTube.zip
 │   └── UAKino.zip
 ├── scripts/
-│   └── build.ps1
+│   ├── build.ps1
+│   └── build.sh
 ├── premid-apps.example.json
 ├── .gitignore
 ├── LICENSE
@@ -124,8 +125,8 @@ dist/UAKino.zip
 
 - Git
 - Node.js
-- npm
-- PowerShell
+- npm або pnpm
+- PowerShell для Windows або Bash для Linux/macOS
 
 Клонуйте репозиторій:
 
@@ -134,10 +135,17 @@ git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
 cd YOUR_REPO
 ```
 
-Запустіть збірку:
+Запустіть збірку на Windows:
 
 ```powershell
 .\scripts\build.ps1
+```
+
+Запустіть збірку на Linux/macOS:
+
+```bash
+chmod +x ./scripts/build.sh
+./scripts/build.sh
 ```
 
 Скрипт зробить таке:
@@ -149,11 +157,18 @@ cd YOUR_REPO
 - збере built ZIP-и;
 - покладе результат у `dist/`.
 
-Зібрати тільки один activity:
+Зібрати тільки один activity на Windows:
 
 ```powershell
 .\scripts\build.ps1 -Activities AniTube
 .\scripts\build.ps1 -Activities UAKino
+```
+
+Зібрати тільки один activity на Linux/macOS:
+
+```bash
+./scripts/build.sh AniTube
+./scripts/build.sh UAKino
 ```
 
 ## 🔑 Discord Application ID
@@ -207,6 +222,12 @@ const presence = new Presence({
 
 ```powershell
 .\scripts\build.ps1
+```
+
+Або на Linux/macOS:
+
+```bash
+./scripts/build.sh
 ```
 
 ## 🖼️ Примітки щодо картинок
