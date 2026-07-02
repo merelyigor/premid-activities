@@ -4,8 +4,7 @@
 
 ## Мова
 
-- [Українська](README.uk.md)
-- [English](README.en.md)
+[English](README.md) | **Українська**
 
 Це репозиторій з локальними [PreMiD](https://premid.app/) Activity для українських відеосайтів:
 
@@ -207,3 +206,5 @@ UAKino часто віддає постери як WebP або блокує пр
 ## Ліцензія
 
 MIT License. Дивіться [LICENSE](LICENSE).
+
+

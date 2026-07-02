@@ -4,8 +4,7 @@ Author: **Merelyigor**
 
 ## Language
 
-- [Українська](README.uk.md)
-- [English](README.en.md)
+**English** | [Українська](README.uk.md)
 
 This repository contains local [PreMiD](https://premid.app/) activities for Ukrainian video websites:
 
@@ -207,3 +206,5 @@ This is not a local image and not a Discord asset. The source is still the UAKin
 ## License
 
 MIT License. See [LICENSE](LICENSE).
+
+
